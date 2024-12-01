@@ -15,7 +15,7 @@ class MonopolyGame:
         self._players = {}
         self._bankrupt_players = deque([])
         self._chance_card_deck = deque([])
-        self._social_fundCard_deck = deque([])
+        self._social_fund_card_deck = deque([])
     
     def initialize(self) -> None:
         num_of_player = self.enter_num_of_player()
@@ -107,3 +107,11 @@ class MonopolyGame:
         print('순위를 공개합니다.')
         for index, player in enumerate(rank):
             print(f'{index + 1}등: 플레이어{player.id}')
+
+    @property
+    def chance_card_deck(self):
+        return self._chance_card_deck
+    
+    @property
+    def social_fund_card_deck(self):
+        return self._social_fund_card_deck

@@ -15,7 +15,8 @@ class Building(ABC):
     def destroy(self) -> None:
         self._count = 0
 
-    def get_rent(self) -> int:
+    @property
+    def rent(self) -> int:
         return self._count * self._price
 
     @property
