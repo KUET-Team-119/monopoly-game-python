@@ -1,5 +1,16 @@
 from domain.square.Square import Square
 from domain.square.SquareType import SquareType
+from domain.square.LotSquare import LotSquare
+from domain.square.RailRoadSquare import RailRoadSquare
+from domain.square.UtilitySquare import UtilitySquare
+from domain.square.StartSquare import StartSquare
+from domain.square.JailSquare import JailSquare
+from domain.square.FreeParkingSquare import FreeParkingSquare
+from domain.square.GoToJailSquare import GoToJailSquare
+from domain.square.IncomeTaxSquare import IncomeTaxSquare
+from domain.square.LuxuryTaxSquare import LuxuryTaxSquare
+from domain.square.SocialFundSquare import SocialFundSquare
+from domain.square.ChanceSquare import ChanceSquare
 
 class SquareFactory:
     index_counter: int = -1
