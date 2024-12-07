@@ -1,7 +1,6 @@
-from enum import Enum
-from domain.component.card.Card import Card
+from domain.component.card.CardType import CardType
 
-class ChanceCardType(Enum):
+class ChanceCardType(CardType):
     FORWARD_TO_START_SQUARE = (0, '출발점으로 전진', 0)
     FORWARD_TO_FIRST_RAILROAD_SQUARE = (1, '가장 가까운 철도 칸으로 전진', 0)
     FORWARD_TO_NEAREST_RAILROAD_SQUARE = (2, '가장 가까운 철도 칸으로 전진', 0)
@@ -14,18 +13,4 @@ class ChanceCardType(Enum):
     GO_TO_JAIL = (9, '감옥으로 가시오', 0)
 
     def __init__(self, index: int, name: str, amount: int):
-        self._index = index
-        self._name = name
-        self._amount = amount
-    
-    @property
-    def index(self) -> int:
-        return self._index
-    
-    @property
-    def name(self) -> str:
-        return self._name
-    
-    @property
-    def amount(self) -> int:
-        return self._amount
+        super().__init__(index, name, amount)

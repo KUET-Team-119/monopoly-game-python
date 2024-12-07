@@ -1,4 +1,10 @@
 from typing import Deque
+from domain.component.card.Card import Card
+from domain.player.PlayerManager.StateManager import StateManager
+from domain.player.PlayerManager.CashManager import CashManager
+from domain.player.PlayerManager.SquareManager import SquareManager
+from domain.player.PlayerManager.DiceRollingManager import DiceRollingManager
+from domain.player.PlayerManager.PieceMovingManager import PieceMovingManager
 
 class Player:
     def __init__(self, id: str):

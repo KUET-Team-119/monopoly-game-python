@@ -15,18 +15,4 @@ class SocialFundCardType(Enum):
     GO_TO_JAIL = (11, '감옥으로 가시오', 0);
 
     def __init__(self, index: int, name: str, amount: int):
-        self._index = index
-        self._name = name
-        self._amount = amount
-    
-    @property
-    def index(self) -> int:
-        return self._index
-    
-    @property
-    def name(self) -> str:
-        return self._name
-    
-    @property
-    def amount(self) -> int:
-        return self._amount
+        super().__init__(index, name, amount)

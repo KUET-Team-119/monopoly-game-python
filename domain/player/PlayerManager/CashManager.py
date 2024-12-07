@@ -1,5 +1,4 @@
 from typing import Final
-from domain.square.PropertySquare import PropertySquare
 from domain.square.LotSquare import LotSquare
 from player.Player import Player
 
@@ -33,21 +32,21 @@ class CashManager:
         return self.handle_bankruptcy()
 
     def handle_bankruptcy(self) -> int:
-        print(f'플레이어 {self._player.get_id()}이/가 파산했습니다.')
-        self._player.get_state_manager().become_bankrupt_state()
+        print(f'플레이어 {self._player.id}이/가 파산했습니다.')
+        self._player.state_manager.become_bankrupt_state()
         payable_amount = self._cash
         self._cash = 0
         return payable_amount
     
     def cover_cash(self, amount: int) -> None:
-        sorted_property_squares = self._player.get_square_manager().get_sorted_property_square()
+        sorted_property_squares = self._player.square_manager.get_sorted_property_square()
         total_cash = self._cash
     
         # 정렬된 부지들을 순차적으로 처리
         for property_square in sorted_property_squares:
-            value = property_square.get_rent() if isinstance(property_square, LotSquare) else property_square.get_price()
+            value = property_square.rent if isinstance(property_square, LotSquare) else property_square.price
             total_cash += value
-            self._player.get_square_manager().remove_property_square(property_square.get_index())
+            self._player.square_manager.remove_property_square(property_square.index)
     
             # 현금이 목표 금액 이상이 되면 판매 중지
             if total_cash >= amount:
@@ -62,7 +61,7 @@ class CashManager:
 
     def calculate_total_assets(self) -> int:
         self.cover_cash(int(1e9))
-        return self._cash()
+        return self._cash
     
     @property
     def cash(self) -> int:

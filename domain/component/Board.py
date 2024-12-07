@@ -1,5 +1,7 @@
 from typing import Final, Dict
-from domain.square import Square, SquareFactory, SquareType
+from domain.square.Square import Square
+from domain.square.SquareFactory import SquareFactory
+from domain.square.SquareType import SquareType
 
 
 class Board:

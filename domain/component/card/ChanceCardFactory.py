@@ -1,6 +1,14 @@
-from domain.component.card.Card import Card
 from domain.component.card.ChanceCard import ChanceCard
 from domain.component.card.ChanceCardType import ChanceCardType
+from domain.component.card.DepositChanceCard import DepositChanceCard
+from domain.component.card.WithdrawChanceCard import WithdrawChanceCard
+from domain.component.card.ForwardToStartChanceCard import ForwardToStartChanceCard
+from domain.component.card.ForwardToFirstRailRoadChanceCard import ForwardToFirstRailRoadChanceCard
+from domain.component.card.ForwardToNearestRailRoadChanceCard import ForwardToNearestRailRoadChanceCard
+from domain.component.card.ForwardToNearestUtilityChanceCard import ForwardToNearestUtilityChanceCard
+from domain.component.card.PayToOtherPlayersChanceCard import PayToOtherPlayersChanceCard
+from domain.component.card.GoBackChanceCard import GoBackChanceCard
+from domain.component.card.GoToJailChanceCard import GoToJailChanceCard
 
 class ChanceCardFactory:
     index_counter: int = -1

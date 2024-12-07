@@ -2,7 +2,7 @@ from domain.MonopolyGame import MonopolyGame
 from domain.player.Player import Player
 from domain.square.Square import Square
 
-class social_fund_card_square(Square):
+class SocialFundSquare(Square):
 
     def __init__(self, index: int, name: str):
         self._index = index
